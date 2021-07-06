@@ -1,0 +1,126 @@
+* {box-sizing: border-box}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color:rgb(34, 36, 36);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+h1{
+    color:rgb(255, 255, 255); 
+    font-family: 'Tahoma'; 
+    font-size:50px; 
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.para{
+    color:rgb(255, 255, 255); 
+    font-size:25px; 
+    font-family:'Georgia'; 
+    text-align: center;
+}
+
+.aboutpara{
+    padding-left: 250px;
+    padding-right: 250px;
+    color:rgb(255, 255, 255); 
+    font-size: 23px; 
+    font-family:'Courier';
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; 
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.Start {
+    background-color: rgb(101, 158, 101);
+    color: white; 
+    border: 2px solid #40a143;
+    position: relative;
+    display: inline-block;
+    left: 43%;
+}
+
+.Start:hover {
+    background-color: #15a01a;
+    color: black;
+}
+
+.Stop {
+    background-color: rgb(170, 95, 95); 
+    color: white; 
+    border: 2px solid #f44336;
+    position: relative;
+    display: inline-block;
+    left: 43%;
+}
+
+.Stop:hover {
+    background-color: #e42f22;
+    color: black;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: rgb(46, 197, 122);
+    color: white;
+    float: left;
+    border: 1px solid #000000;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: rgb(86, 155, 59);
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    -webkit-animation: fadeInAnimation 0.5s;
+    animation: fadeInAnimation 0.5s;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

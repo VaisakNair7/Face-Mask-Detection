@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = "UTF-8" name = "viewport" content = "width=device-width, initial-scale=1">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'style.css')}}">
+    <title>Face Mask Detector</title>
+</head>
+
+<body>
+    
+    <button class = "tablink" onclick = "openPage('Detector')" id = "defaultOpen">Face Mask Detection</button>
+    <button class = "tablink" onclick = "openPage('About')">About</button>
+
+    <div id = "Detector" class = "tabcontent">
+        <h1>Face Mask Detection</h1>
+        <br>
+        <img id = "frame" src="{{ url_for('video_feed') }}" style = "display:none;">
+        <br>
+        <button class = "button Start" onclick = "StartStreaming()">Start</button>
+        <button class = "button Stop" onclick = "StopStreaming()">Stop</button>
+        <br>
+        <p class = "para">Wear your mask when you go outside, regularly sanitize your hands and maintain social distancing. &#128516; &#128519;</p>
+        <br>
+    </div>
+
+    <div id = "About" class = "tabcontent" >
+        <p class = "aboutpara"> This Face Mask Detector model was build by training pre trained MobileNetV2 using Tensorflow. The model was 
+            trained on 3.4k images of faces with and without mask using 'imagenet' weights. MobilenetV2 is a lightweight 
+            Keras application with low parameter and depth count. Keras Applications are deep learning models that are 
+            made available alongside pre-trained weights. These models can be used for prediction, feature extraction, 
+            and fine-tuning. The fornt end was bulit using Flask web framework, Html, CSS and javascript.</p>
+
+        <p class = "aboutpara">The Covid-19 pandemic is not over yet. Always wash your hands regularly when you go outside, maintain 
+            social distancing, cover your mouth with mask😷 and get vaccinated💉 when you get the chance.
+        </p>
+    </div>
+
+    <script type = "text/javascript">
+        function StartStreaming(){ 
+            document.getElementById('frame').style.display = 'block';
+        }
+                
+        function StopStreaming(){ 
+            document.getElementById('frame').style.display = 'none';
+        }
+
+        function openPage(pageName) {
+            var i, tabcontent, tablinks;
+                        
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+                        
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+                        
+            document.getElementById(pageName).style.display = "block";
+        }
+        document.getElementById("defaultOpen").click();
+
+    </script>
+
+  </body>
+
+</html>
